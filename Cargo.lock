@@ -11,18 +11,18 @@ dependencies = [
 
 [[package]]
 name = "bare-metal"
-version = "0.2.4"
+version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a3caf393d93b2d453e80638d0674597020cef3382ada454faacd43d1a55a735a"
+checksum = "5deb64efa5bd81e31fcd1938615a6d98c82eafcbcd787162b6f63b91d6bac5b3"
 dependencies = [
  "rustc_version",
 ]
 
 [[package]]
 name = "bit_field"
-version = "0.9.0"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ed8765909f9009617974ab6b7d332625b320b33c326b1e9321382ef1999b5d56"
+checksum = "a165d606cf084741d4ac3a28fb6e9b1eb0bd31f6cd999098cfddb0b2ab381dc0"
 
 [[package]]
 name = "lazy_static"
@@ -110,19 +110,20 @@ checksum = "26412eb97c6b088a6997e05f69403a802a92d520de2f8e63c2b65f9e0f47c4e8"
 
 [[package]]
 name = "riscv"
-version = "0.5.6"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4a12a859c86dbbcad4eb18daa0465932d907687abfa909c9cc0ca32dc237c8c3"
+checksum = "a2f0b705d428e9d0f78e2bb73093887ee58a83c9688de3faedbb4c0631c4618e"
 dependencies = [
  "bare-metal",
  "bit_field",
+ "riscv-target",
 ]
 
 [[package]]
 name = "riscv-rt"
-version = "0.7.2"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d9e59872da875148c289c8d3d25eb147b640e413d8f0bb34da2355b3f0c995fb"
+checksum = "b7fe583b2216c75d6f35996919c09fd4011fbc8f6bf31e5fbc97483a6aaa8bdd"
 dependencies = [
  "r0",
  "riscv",
@@ -157,6 +158,7 @@ name = "riscv-test"
 version = "0.1.0"
 dependencies = [
  "panic-halt",
+ "riscv",
  "riscv-rt",
 ]
 

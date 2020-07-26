@@ -21,7 +21,11 @@ fn main() -> ! {
                 //let lit = ((x >> 2) & 1) ^ ((y >> 2) & 1);
 
                 //image_data[idx] = if lit != 0 { 255 } else { 0 };
-                image_data[idx] = (if (((x >> 2) & 1) ^ ((y >> 2) & 1)) != 0 { idx } else { 0 }) as u8;
+                image_data[idx] = (if (((x >> 2) & 1) ^ ((y >> 2) & 1)) != 0 {
+                    idx
+                } else {
+                    0
+                }) as u8;
             }
         }
 
@@ -32,9 +36,9 @@ fn main() -> ! {
         }
         */
 
-        // End the program by writing outside of RAM
+        // End the program by executing the wfi instruction
         unsafe {
-            core::ptr::write_volatile(0x4000 as *mut u32, 0xdeadbeef);
+            riscv::asm::wfi();
         }
     }
 }
