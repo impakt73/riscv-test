@@ -9,7 +9,7 @@ elf_path="$(realpath $1)"
 
 pushd ../devsim/
 cargo run --release \
-    --bin sim       \
+    --bin view       \
     -- $elf_path
 
 # WA: devsim doesn't have an image output option, so it dumps it to $PWD.
