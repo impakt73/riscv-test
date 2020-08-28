@@ -1,8 +1,10 @@
 [target.riscv32i-unknown-none-elf]
 rustflags = [
-"-C", "link-arg=-Tmemory.x",
-"-C", "link-arg=-Tlink.x",
+    "-C", "link-arg=-Tmemory.x",
+    "-C", "link-arg=-Tlink.x",
 ]
+# TODO: If we cargo install devsim, this can just be "sim" or "viewer"
+runner = "./runner.sh"
 
 [build]
 target = "riscv32i-unknown-none-elf"
